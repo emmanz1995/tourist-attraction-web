@@ -1,0 +1,104 @@
+@import "variables";
+.navbar {
+  padding: 0;
+  margin: 0;
+  background-color: midnightblue;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+ul.collapsed {
+  display: flex;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  margin: 10px;
+  color: #fff;
+}
+
+.fa-bars {
+  display: none;
+}
+
+@media screen and (max-width: 475px) {
+  height: auto;
+  min-height: 50px;
+  display: block;
+  position: relative;
+  .logo {
+    width: 100%;
+    display: block;
+    padding-top: 20px;
+    margin: 0px -5px;
+    a {
+      padding: 20px 0;
+    }
+  }
+  .fa-bars {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  ul.collapsed {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    overflow: hidden;
+    max-height: 0;
+    -moz-transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+    &.is-expanded {
+      overflow: hidden;
+      max-height: 500px; /* approximate max height */
+      -moz-transition-duration: 0.4s;
+      -webkit-transition-duration: 0.4s;
+      -o-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      -moz-transition-timing-function: ease-in;
+      -webkit-transition-timing-function: ease-in;
+      -o-transition-timing-function: ease-in;
+      transition-timing-function: ease-in;
+    }
+    li {
+      padding: 15px 10px;
+      margin: 0 0;
+      width: 100%;
+    }
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .nav-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
