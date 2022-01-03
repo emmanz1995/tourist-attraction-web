@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/home.scss';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
-import Card from "../components/card";
+import Card from '../components/card';
+import { TravelData } from '../data/travelData';
 
-function Home() {
+function Home({ data }) {
+    // const [data, setData] = useState([]);
+    //
+    // useEffect(() => {
+    //     setData(TravelData);
+    //     console.log(TravelData)
+    // }, [])
+
     return (
         <div className="main-container">
             <section className="banner-container">
@@ -26,9 +34,12 @@ function Home() {
             <section className="card-align">
                 <h1><b>Come and visit one of the world's most prestigious places</b></h1>
                 <div className="card-container">
-                    <Card title="Tower Bridge" image="assets/london-bridge-2324875_640.jpg" link="/" linkTitle="read more" />
-                    <Card title="The City of London" image="assets/joao-barbosa-iSZJxklblkw-unsplash.jpg" link="/" linkTitle="read more" />
-                    <Card title="Lesnes Abbey" image="assets/lesnes-abbey.jpg" link="/" linkTitle="read more" />
+                    {/*<Card title="Tower Bridge" image="assets/london-bridge-2324875_640.jpg" link="/" linkTitle="read more" />*/}
+                    {/*<Card title="The City of London" image="assets/joao-barbosa-iSZJxklblkw-unsplash.jpg" link="/" linkTitle="read more" />*/}
+                    {/*<Card title="Lesnes Abbey" image="assets/lesnes-abbey.jpg" link="/" linkTitle="read more" />*/}
+                    {data?.map((location) => (
+                        <Card location={location} />
+                    ))}
                 </div>
             </section>
             <section className="about"></section>

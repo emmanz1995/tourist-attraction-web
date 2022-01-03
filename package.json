@@ -13,6 +13,7 @@
     "react-responsive-carousel": "^3.2.18",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "uuidv4": "^6.2.12",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
